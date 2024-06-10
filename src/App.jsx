@@ -7,6 +7,7 @@ import Feedback from "./components/Feedback/Feedbakc";
 import "./App.css";
 
 function App() {
+  console.log("11");
   const [feedbackStat, setFeedbackStat] = useState(() => {
     const storage = window.localStorage.getItem("saved-feedback");
     if (storage !== undefined) {
