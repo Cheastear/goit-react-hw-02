@@ -9,9 +9,8 @@ import "./App.css";
 function App() {
   console.log("11");
   const [feedbackStat, setFeedbackStat] = useState(() => {
-    const storage = window.localStorage.getItem("saved-feedback");
-    if (storage !== undefined) {
-      return JSON.parse(storage);
+    if (localStorage.getItem("saved-feedback") !== undefined) {
+      return JSON.parse(localStorage.getItem("saved-feedback"));
     }
     return {
       good: 0,
