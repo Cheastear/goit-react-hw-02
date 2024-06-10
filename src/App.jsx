@@ -7,7 +7,6 @@ import Feedback from "./components/Feedback/Feedbakc";
 import "./App.css";
 
 function App() {
-  console.log("11");
   const [feedbackStat, setFeedbackStat] = useState(() => {
     if (localStorage.getItem("saved-feedback") !== undefined) {
       return JSON.parse(localStorage.getItem("saved-feedback"));
