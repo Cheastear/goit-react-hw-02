@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Description from "./components/Description/Description";
 import Option from "./components/Option/Oprion";
 import Feedback from "./components/Feedback/Feedbakc";
+import Notification from "./components/Notification/Notification";
 
 import "./App.css";
 
@@ -66,7 +67,7 @@ function App() {
           positiveFeedback={positiveFeedback}
         />
       ) : (
-        <p>No feedback yet</p>
+        <Notification />
       )}
     </>
   );
