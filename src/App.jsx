@@ -8,8 +8,9 @@ import "./App.css";
 
 function App() {
   const [feedbackStat, setFeedbackStat] = useState(() => {
-    if (localStorage.getItem("saved-feedback") !== undefined) {
-      return JSON.parse(localStorage.getItem("saved-feedback"));
+    const savedFeedback = window.localStorage.getItem("saved-feedback");
+    if (savedFeedback !== null) {
+      return JSON.parse(savedFeedback);
     }
     return {
       good: 0,
@@ -18,15 +19,15 @@ function App() {
     };
   });
 
+  useEffect(() => {
+    window.localStorage.setItem("saved-feedback", JSON.stringify(feedbackStat));
+  }, [feedbackStat]);
+
   const totalFeedback =
     feedbackStat.good + feedbackStat.neutral + feedbackStat.bad;
   const positiveFeedback = Math.round(
     (feedbackStat.good / totalFeedback) * 100
   );
-
-  useEffect(() => {
-    window.localStorage.setItem("saved-feedback", JSON.stringify(feedbackStat));
-  }, [feedbackStat]);
 
   const updateFeedback = (feedbackType) => {
     if (feedbackType == "good") {
