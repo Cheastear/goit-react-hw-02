@@ -45,7 +45,7 @@ function App() {
         ...feedbackStat,
         bad: feedbackStat.bad + 1,
       });
-    } else if (feedbackType == "crear") {
+    } else if (feedbackType == "clear") {
       setFeedbackStat({
         good: 0,
         neutral: 0,

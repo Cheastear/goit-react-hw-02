@@ -27,7 +27,7 @@ const Option = ({ updateFeedback, totalFeedback }) => {
       {totalFeedback != 0 ? (
         <button
           onClick={() => {
-            updateFeedback("crear");
+            updateFeedback("clear");
           }}
         >
           Reset
